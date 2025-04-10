@@ -7,4 +7,8 @@
             <li><a routerLink="/register"><i class="fas fa-user-plus"> Sign up</i></a></li>
         </ul>
     </div>
+    <div class="profile" *ngIf="user">
+        <p>{{user.username}}</p>
+        <button (click)="logout()">Logout</button>
+    </div>
 </nav>

@@ -10,6 +10,8 @@ nav{
     padding: 1rem;
     font-size: 1.3rem;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.087);
+    display: flex;
+    justify-content: space-between;
 }
 
 nav li{
@@ -24,4 +26,36 @@ nav ul{
 nav li:hover{
     transform: scale(1.05);
     text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.124);
+}
+
+.profile{
+    margin-right: 3rem;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+}
+
+.profile button{
+    background-color: rgb(255, 74, 68);
+    border: none;
+    height: 2.3rem;
+    width:5rem;
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all .1s ease;
+    font-weight: bold;
+}
+
+.profile button:active{
+    background-color: rgb(255, 21, 0);
+    transform: scale(1.05);
+}
+.profile p{
+    margin: 0 1rem;
+    font-size: 2rem;
+}
+
+.profile i{
+    font-size: 2rem;
 }
