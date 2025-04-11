@@ -4,6 +4,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { User } from '../models/navbar.model';
 import { NavbarService } from '../services/navbar.service';
 import { CommonModule } from '@angular/common';
+import { LoginService } from '../../login/services/login.service';
+import { BehaviorSubject } from 'rxjs';
+import { UserStateService } from '../../core/services/user-state.service';
 @Component({
   selector: 'app-navbar',
   standalone:true,
@@ -13,16 +16,18 @@ import { CommonModule } from '@angular/common';
 })
 export class NavbarComponent {
   user: User | null = null
+  isAuth : boolean = false
 
-  constructor(private navService: NavbarService){
-    navService.user$.subscribe({
-      next: (user) => {
-        this.user = user
-      }
+  constructor(private userStateService: UserStateService){
+    this.userStateService.user$.subscribe(user => {
+      this.user = user
+    })
+    this.userStateService.isAuth$.subscribe(isAuth => {
+      this.isAuth = isAuth
     })
   }
 
   logout(){
-    this.navService.logout()
+    this.userStateService.logout()
   }
 }

@@ -31,8 +31,9 @@ export class LoginService {
   }
 
   logout(){
-    localStorage.clear()
+    localStorage.removeItem(this.tokenKey)
     this.isAuthSub.next(false)
+    this.router.navigate(['/login'])
   }
 
   getToken(): string | null{
