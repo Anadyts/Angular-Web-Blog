@@ -13,18 +13,28 @@ import { CommonModule } from '@angular/common';
 })
 export class BlogComponent implements OnInit{
   articles: Article[] = []
-
+  private limit : number = 4
   constructor(private blogService: BlogService){}
 
   ngOnInit(): void {
-      this.blogService.fetchArticles().subscribe({
-        next: (res) => {
-          this.articles = res.articles
-        },
-        error: (err) => {
-          console.log('Init blog error', err)
-        }
-      })
+    this.getArticles(this.limit)
   }
 
+  getArticles(limit : number){
+    this.blogService.fetchArticles(limit).subscribe({
+      next: (res) => {
+        this.articles = res.articles
+      },
+      error: (err) => {
+        console.log('Init blog error', err)
+      }
+    })
+  }
+
+  moreArticles(){
+    this.limit += 4
+    this.getArticles(this.limit)
+    console.log(this.limit)
+    
+  }
 }

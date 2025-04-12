@@ -13,8 +13,8 @@ export class BlogService {
 
   constructor(private http: HttpClient) { }
 
-  fetchArticles(){
-    return this.http.get<{articles: Article[]}>(this.apiUrl).pipe(
+  fetchArticles(limit: number){
+    return this.http.get<{articles: Article[]}>(this.apiUrl + `?limit=${limit}`).pipe(
       tap((res) => {
         this.articlesSub.next(res.articles)
         console.log(res.articles)

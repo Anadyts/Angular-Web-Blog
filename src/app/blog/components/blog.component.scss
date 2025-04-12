@@ -94,3 +94,28 @@
     color: black;
     text-align: end;
 }
+
+.more-button{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.more-button button{
+    border: none;
+    background-color: rgb(255, 63, 63);
+    color: white;
+    border-radius: 0.3rem;
+    width: 5rem;
+    height: 2rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all .1s ease;
+    margin: 2rem;
+}
+
+.more-button button:active{
+    background-color: red;
+    transform: scale(1.1);
+}
