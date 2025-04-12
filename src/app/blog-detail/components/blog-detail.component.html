@@ -1,0 +1,18 @@
+<div class="blog-container" *ngIf="article">
+    <div class="blog-card">
+    <h1 class="blog-title">{{ article.title }}</h1>
+    <p class="blog-date">{{ article.created_at | date:'fullDate' }} at {{ article.created_at | date:'shortTime' }}</p>
+    
+    <div class="blog-content">
+        <p>{{ article.content }}</p>
+    </div>
+
+    <div class="blog-author">
+        <p class="author-name">Written by {{author}}</p>
+    </div>
+    </div>
+</div>
+
+<div class="not-found" *ngIf="!article">
+    <p>Article not found.</p>
+</div>
