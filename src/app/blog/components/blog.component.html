@@ -4,10 +4,14 @@
         <a routerLink="create-article" class="section-create-blog">
             <i class="fa-solid fa-circle-plus"></i>
         </a>
+        <div class="search-bar">
+            <input [(ngModel)]="search" type="text" placeholder="Search...">
+            <button (click)="searchArticles()"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
         <div class="section-header">
             <h2>Latest Articles</h2>
         </div>
-        <div class="article-list">
+        <div class="article-list" *ngIf="articles">
             <article *ngFor="let article of articles">
                 <div class="article-header">
                     <p>{{article.title}}</p>
@@ -20,8 +24,11 @@
                 </div>
             </article>
         </div>
+        <div class="not-found" *ngIf="articles.length === 0">
+            <p>Articles not found</p>
+        </div>
     </div>
     <div class="more-button">
-        <button (click) = 'moreArticles()'>More</button>
+        <button *ngIf="!isRanOutOfArticles" (click) = 'moreArticles()'>More</button>
     </div>
 </section>

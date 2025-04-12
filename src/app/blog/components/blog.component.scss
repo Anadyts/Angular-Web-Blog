@@ -119,3 +119,46 @@
     background-color: red;
     transform: scale(1.1);
 }
+
+.search-bar{
+    display: flex;
+    justify-content: center;
+
+}
+
+.search-bar input{
+    width: 80rem;
+    height: 3rem;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.219);
+    padding-left: 1rem;
+    font-size: 1.1rem;
+}
+
+.fa-magnifying-glass{
+    color: white;
+}
+
+.search-bar button{
+    border: none;
+    background: rgb(220, 116, 255);
+    width: 3rem;
+    border-radius: 3rem;
+    cursor: pointer;
+    margin-left: 1rem;
+    transition: all .02s ease;
+}
+
+.search-bar button:active{
+    background: rgb(210, 74, 255);
+    transform: scale(1.05);
+}
+
+.not-found{
+    color:gray;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 3rem;
+}

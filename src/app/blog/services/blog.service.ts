@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Article } from '../models/blog.model';
-import { BehaviorSubject, map, tap } from 'rxjs';
+import { BehaviorSubject, catchError, map, of, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +13,14 @@ export class BlogService {
 
   constructor(private http: HttpClient) { }
 
-  fetchArticles(limit: number){
-    return this.http.get<{articles: Article[]}>(this.apiUrl + `?limit=${limit}`).pipe(
+  fetchArticles(limit: number, search: string){
+    return this.http.get<{articles: Article[]}>(this.apiUrl + `?limit=${limit}&search=${search}`).pipe(
       tap((res) => {
         this.articlesSub.next(res.articles)
         console.log(res.articles)
+      }),
+      catchError((err) => {
+        return of({articles: []})
       })
     )
   }
