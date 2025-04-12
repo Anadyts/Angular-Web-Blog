@@ -8,104 +8,17 @@
             <h2>Latest Articles</h2>
         </div>
         <div class="article-list">
-            <article>
+            <article *ngFor="let article of articles">
                 <div class="article-header">
-                    <p>How to end this? How to end this? How to end this? How to end this? How to end this? How to end this? How to end this? How to end this?How to end this? How to end this? How to end this? How to end this?</p>
+                    <p>{{article.title}}</p>
                 </div>
                 <div class="article-description">
-                    <p>
-                        I have this problem for a week, How to fix this? I have this problem for a week, How to fix this? I have this problem for a week, How to fix this?
-                        I have this problem for a week, How to fix this? I have this problem for a week, How to fix this? I I have this problem for a week, How to fix this? I have this problem for a week, How to fix this? I 
-                    </p>
+                    <p>{{article.content}}</p>
                 </div>
                 <div class="article-footer">
-                    
+                    <p>{{article.created_at | date:'fullDate'}} at {{article.created_at | date: 'shortTime'}}</p>
                 </div>
             </article>
-            <article>
-                <div class="article-header">
-                    <p>How to end this?</p>
-                </div>
-                <div class="article-description">
-                    <p>I have this problem for a week, How to fix this?</p>
-                </div>
-                <div class="article-footer">
-                    <a href="">Read</a>
-                </div>
-            </article>
-            <article>
-                <div class="article-header">
-                    <p>How to end this?</p>
-                </div>
-                <div class="article-description">
-                    <p>I have this problem for a week, How to fix this?</p>
-                </div>
-                <div class="article-footer">
-                    <a href="">Read</a>
-                </div>
-            </article>
-            <article>
-                <div class="article-header">
-                    <p>How to end this?</p>
-                </div>
-                <div class="article-description">
-                    <p>I have this problem for a week, How to fix this?</p>
-                </div>
-                <div class="article-footer">
-                    <a href="">Read</a>
-                </div>
-            </article>
-            <article>
-                <div class="article-header">
-                    <p>How to end this?</p>
-                </div>
-                <div class="article-description">
-                    <p>I have this problem for a week, How to fix this?</p>
-                </div>
-                <div class="article-footer">
-                    <a href="">Read</a>
-                </div>
-            </article>
-            <article>
-                <div class="article-header">
-                    <p>How to end this?</p>
-                </div>
-                <div class="article-description">
-                    <p>I have this problem for a week, How to fix this?</p>
-                </div>
-                <div class="article-footer">
-                    <a href="">Read</a>
-                </div>
-            </article>
-            <article>
-                <div class="article-header">
-                    <p>How to end this?</p>
-                </div>
-                <div class="article-description">
-                    <p>I have this problem for a week, How to fix this?</p>
-                </div>
-                <div class="article-footer">
-                    <a href="">Read</a>
-                </div>
-            </article>
-            <article>
-                <div class="article-header">
-                    <p>How to end this?</p>
-                </div>
-                <div class="article-description">
-                    <p>I have this problem for a week, How to fix this?</p>
-                </div>
-                <div class="article-footer">
-                    <a href="">Read</a>
-                </div>
-            </article>
-            
-            
-            
-            
-            
-            
-            
         </div>
     </div>
 </section>

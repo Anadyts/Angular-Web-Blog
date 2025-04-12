@@ -7,16 +7,16 @@
 
     <div class="input-box">
         <p>🖋️ Title</p>
-        <input type="text" placeholder="Type your Title here! ✍️">
+        <input [(ngModel)]="title" type="text" placeholder="Type your Title here! ✍️">
     </div>
 
     <div class="content-box">
         <p>📄 Content</p>
-        <textarea placeholder="Write something meaningful... 💬"></textarea>
+        <textarea [(ngModel)]="content" placeholder="Write something meaningful... 💬"></textarea>
     </div>
 
     <div class="button-box">
-        <button>🚀 Create</button>
+        <button (click)="createBlog()">🚀 Create</button>
     </div>
     </div>
 
