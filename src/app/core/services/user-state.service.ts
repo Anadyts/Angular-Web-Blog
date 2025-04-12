@@ -32,6 +32,7 @@ export class UserStateService {
       error: (error) => {
         console.error('Error fetching user:', error);
         this.userStore.next(null);
+        localStorage.clear()
       }
     });
   }
