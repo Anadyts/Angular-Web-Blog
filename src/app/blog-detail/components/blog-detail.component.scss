@@ -99,11 +99,11 @@
 @keyframes fadeIn {
     from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: scale(0.8);
     }
     to {
     opacity: 1;
-    transform: translateY(0);
+    
     }
 }
 
@@ -127,8 +127,75 @@
 .comment-author{
     font-weight: bold;
     color: #333;
+    text-transform: capitalize;
 }
 .comment-footer{
     border-top: 1px solid rgb(235, 235, 235) ;
     color: gray;
+}
+
+.more-button{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.more-button button{
+    border: none;
+    background-color: rgb(255, 63, 63);
+    color: white;
+    border-radius: 0.3rem;
+    width: 5rem;
+    height: 2rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all .1s ease;
+    margin: 2rem;
+}
+
+.more-button button:active{
+    background-color: red;
+    transform: scale(1.1);
+}
+
+.comment-input{
+    display: flex;
+    justify-content: center;
+}
+.comment-input textarea{
+    width: 52rem;
+    min-height: 20rem;
+    font-size: 1.3rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.121);
+    margin: 3rem;
+}
+
+.comment-button{
+    display: flex;
+    justify-content: center;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 3rem;
+}
+
+.comment-button button{
+    border-radius: 0.5rem;
+    border: none;
+    background-color: rgb(0, 102, 255);
+    color: white;
+    width: 49%;
+    height: 2.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.159);
+    transition: all .1s ease;
+}
+
+.comment-button button:active{
+    background-color: rgb(0, 83, 206);
+    transform: scale(1.02);
 }
