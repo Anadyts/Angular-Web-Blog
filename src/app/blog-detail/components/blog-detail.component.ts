@@ -14,6 +14,7 @@ import { User } from '../../login/models/login.model';
 export class BlogDetailComponent implements OnInit{
   article : Article | null = null
   author: string = ''
+  isCommentSectionOn : boolean = false 
   constructor(private blogDetailService: BlogDetailService, private route: ActivatedRoute){}
 
   ngOnInit(): void {
@@ -24,5 +25,10 @@ export class BlogDetailComponent implements OnInit{
         this.author = res.author
       }
     })
+  }
+
+  turnOnComment(){
+    const current = this.isCommentSectionOn
+    this.isCommentSectionOn = !current
   }
 }

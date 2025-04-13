@@ -7,12 +7,192 @@
         <p>{{ article.content }}</p>
     </div>
 
-    <div class="blog-author">
+    <div class="blog-footer">
         <p class="author-name">Written by {{author}}</p>
+        <div class="option">
+            <i class="fa-solid fa-comments" (click)="turnOnComment()"></i>
+            <i class="fa-solid fa-star"></i>
+        </div>
     </div>
+    
     </div>
 </div>
 
 <div class="not-found" *ngIf="!article">
     <p>Article not found.</p>
 </div>
+
+<section class="comment-section" *ngIf="isCommentSectionOn">
+    <div class="wrap-container">
+        <div class="comment-container">
+            <div class="comment-author">
+                <p>Potter</p>
+            </div>
+            <div class="comment-content">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto ut aliquid voluptatum! 
+                    Autem doloribus, illum possimus voluptatem, adipisci quo tenetur est voluptatum amet 
+                    ab dolorem inventore dolor doloremque impedit non! Sequi impedit consectetur quis? 
+                    Cupiditate labore harum ullam commodi et totam corporis iure fugiat dolorem, aut alias 
+                    autem porro veniam cum sunt facere veritatis voluptas odio impedit aliquam iste, repellendus 
+                </p>
+            </div>
+            <div class="comment-footer">
+                <p>Sunday, April 13, 2025 at 3:00 AM</p>
+            </div>
+        </div>
+    
+        <div class="comment-container">
+            <div class="comment-author">
+                <p>Potter</p>
+            </div>
+            <div class="comment-content">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto ut aliquid voluptatum! 
+                    Autem doloribus, illum possimus voluptatem, adipisci quo tenetur est voluptatum amet 
+                    ab dolorem inventore dolor doloremque impedit non! Sequi impedit consectetur quis? 
+                    Cupiditate labore harum ullam commodi et totam corporis iure fugiat dolorem, aut alias 
+                    autem porro veniam cum sunt facere veritatis voluptas odio impedit aliquam iste, repellendus 
+                </p>
+            </div>
+            <div class="comment-footer">
+                <p>Sunday, April 13, 2025 at 3:00 AM</p>
+            </div>
+        </div>
+    
+        <div class="comment-container">
+            <div class="comment-author">
+                <p>Potter</p>
+            </div>
+            <div class="comment-content">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto ut aliquid voluptatum! 
+                    Autem doloribus, illum possimus voluptatem, adipisci quo tenetur est voluptatum amet 
+                    ab dolorem inventore dolor doloremque impedit non! Sequi impedit consectetur quis? 
+                    Cupiditate labore harum ullam commodi et totam corporis iure fugiat dolorem, aut alias 
+                    autem porro veniam cum sunt facere veritatis voluptas odio impedit aliquam iste, repellendus 
+                </p>
+            </div>
+            <div class="comment-footer">
+                <p>Sunday, April 13, 2025 at 3:00 AM</p>
+            </div>
+        </div>
+    
+        <div class="comment-container">
+            <div class="comment-author">
+                <p>Potter</p>
+            </div>
+            <div class="comment-content">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto ut aliquid voluptatum! 
+                    Autem doloribus, illum possimus voluptatem, adipisci quo tenetur est voluptatum amet 
+                    ab dolorem inventore dolor doloremque impedit non! Sequi impedit consectetur quis? 
+                    Cupiditate labore harum ullam commodi et totam corporis iure fugiat dolorem, aut alias 
+                    autem porro veniam cum sunt facere veritatis voluptas odio impedit aliquam iste, repellendus 
+                </p>
+            </div>
+            <div class="comment-footer">
+                <p>Sunday, April 13, 2025 at 3:00 AM</p>
+            </div>
+        </div>
+    
+        <div class="comment-container">
+            <div class="comment-author">
+                <p>Potter</p>
+            </div>
+            <div class="comment-content">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto ut aliquid voluptatum! 
+                    Autem doloribus, illum possimus voluptatem, adipisci quo tenetur est voluptatum amet 
+                    ab dolorem inventore dolor doloremque impedit non! Sequi impedit consectetur quis? 
+                    Cupiditate labore harum ullam commodi et totam corporis iure fugiat dolorem, aut alias 
+                    autem porro veniam cum sunt facere veritatis voluptas odio impedit aliquam iste, repellendus 
+                </p>
+            </div>
+            <div class="comment-footer">
+                <p>Sunday, April 13, 2025 at 3:00 AM</p>
+            </div>
+        </div>
+    
+        <div class="comment-container">
+            <div class="comment-author">
+                <p>Potter</p>
+            </div>
+            <div class="comment-content">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto ut aliquid voluptatum! 
+                    Autem doloribus, illum possimus voluptatem, adipisci quo tenetur est voluptatum amet 
+                    ab dolorem inventore dolor doloremque impedit non! Sequi impedit consectetur quis? 
+                    Cupiditate labore harum ullam commodi et totam corporis iure fugiat dolorem, aut alias 
+                    autem porro veniam cum sunt facere veritatis voluptas odio impedit aliquam iste, repellendus 
+                </p>
+            </div>
+            <div class="comment-footer">
+                <p>Sunday, April 13, 2025 at 3:00 AM</p>
+            </div>
+        </div>
+    
+        <div class="comment-container">
+            <div class="comment-author">
+                <p>Potter</p>
+            </div>
+            <div class="comment-content">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto ut aliquid voluptatum! 
+                    Autem doloribus, illum possimus voluptatem, adipisci quo tenetur est voluptatum amet 
+                    ab dolorem inventore dolor doloremque impedit non! Sequi impedit consectetur quis? 
+                    Cupiditate labore harum ullam commodi et totam corporis iure fugiat dolorem, aut alias 
+                    autem porro veniam cum sunt facere veritatis voluptas odio impedit aliquam iste, repellendus 
+                </p>
+            </div>
+            <div class="comment-footer">
+                <p>Sunday, April 13, 2025 at 3:00 AM</p>
+            </div>
+        </div>
+    
+        <div class="comment-container">
+            <div class="comment-author">
+                <p>Potter</p>
+            </div>
+            <div class="comment-content">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto ut aliquid voluptatum! 
+                    Autem doloribus, illum possimus voluptatem, adipisci quo tenetur est voluptatum amet 
+                    ab dolorem inventore dolor doloremque impedit non! Sequi impedit consectetur quis? 
+                    Cupiditate labore harum ullam commodi et totam corporis iure fugiat dolorem, aut alias 
+                    autem porro veniam cum sunt facere veritatis voluptas odio impedit aliquam iste, repellendus 
+                </p>
+            </div>
+            <div class="comment-footer">
+                <p>Sunday, April 13, 2025 at 3:00 AM</p>
+            </div>
+        </div>
+    
+        <div class="comment-container">
+            <div class="comment-author">
+                <p>Potter</p>
+            </div>
+            <div class="comment-content">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto ut aliquid voluptatum! 
+                    Autem doloribus, illum possimus voluptatem, adipisci quo tenetur est voluptatum amet 
+                    ab dolorem inventore dolor doloremque impedit non! Sequi impedit consectetur quis? 
+                    Cupiditate labore harum ullam commodi et totam corporis iure fugiat dolorem, aut alias 
+                    autem porro veniam cum sunt facere veritatis voluptas odio impedit aliquam iste, repellendus 
+                </p>
+            </div>
+            <div class="comment-footer">
+                <p>Sunday, April 13, 2025 at 3:00 AM</p>
+            </div>
+        </div>
+    
+        <div class="comment-container">
+            <div class="comment-author">
+                <p>Potter</p>
+            </div>
+            <div class="comment-content">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto ut aliquid voluptatum! 
+                    Autem doloribus, illum possimus voluptatem, adipisci quo tenetur est voluptatum amet 
+                    ab dolorem inventore dolor doloremque impedit non! Sequi impedit consectetur quis? 
+                    Cupiditate labore harum ullam commodi et totam corporis iure fugiat dolorem, aut alias 
+                    autem porro veniam cum sunt facere veritatis voluptas odio impedit aliquam iste, repellendus 
+                </p>
+            </div>
+            <div class="comment-footer">
+                <p>Sunday, April 13, 2025 at 3:00 AM</p>
+            </div>
+        </div>
+    </div>
+    
+</section>
