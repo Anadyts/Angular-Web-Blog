@@ -3,6 +3,7 @@
         <ul>
             <li><a routerLink="/"><i class="fa-solid fa-house">Home</i></a></li>
             <li *ngIf="isAuth"><a routerLink="/blog"><i class="fa-solid fa-comment">Blog</i></a></li>
+            <li *ngIf="isAuth"><a routerLink="/my-blog"><i class="fa-solid fa-user">My blog</i></a></li>
             <li *ngIf="!isAuth"><a routerLink="/login"><i class="fa-solid fa-user"> Sign in</i></a></li>
             <li *ngIf="!isAuth"><a routerLink="/register"><i class="fas fa-user-plus"> Sign up</i></a></li>
         </ul>

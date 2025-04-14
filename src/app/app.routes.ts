@@ -7,6 +7,7 @@ import { authGuard } from './core/guards/auth.guard';
 import { notAuthGuard } from './core/guards/notAuth.guard';
 import { CreateArticleComponent } from './create-article/components/create-article.component';
 import { BlogDetailComponent } from './blog-detail/components/blog-detail.component';
+import { MyBlogComponent } from './my-blog/components/my-blog.component';
 
 export const routes: Routes = [
     {path:'login', component:LoginComponent, canActivate:[notAuthGuard]},
@@ -14,6 +15,8 @@ export const routes: Routes = [
     {path:'register', component:RegisterComponent, canActivate:[notAuthGuard]},
     {path:'blog/create-article', component:CreateArticleComponent, canActivate:[authGuard]},
     {path:'blog/details/:id', component:BlogDetailComponent, canActivate:[authGuard]},
+    {path:'my-blog/details/:id', component:BlogDetailComponent, canActivate:[authGuard]},
+    {path:'my-blog', component:MyBlogComponent, canActivate:[authGuard]},
     {path:'', component:HomeComponent},
     {path:'**', component:HomeComponent},
 ];

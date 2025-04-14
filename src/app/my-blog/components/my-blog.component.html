@@ -1,0 +1,30 @@
+
+<section class="articles-section">
+    <div class="container">
+        <a routerLink="/blog/create-article" class="section-create-blog">
+            <i class="fa-solid fa-circle-plus"></i>
+        </a>
+
+        <div class="article-list" *ngIf="articles">
+            <article *ngFor="let article of articles" [routerLink]="['details', article.article_id]">
+                <div class="article-header">
+                    <p>{{article.title}}</p>
+                </div>
+                <div class="article-description">
+                    <p>{{article.content}}</p>
+                </div>
+                <div class="article-footer">
+                    <p>{{article.created_at | date:'fullDate'}} at {{article.created_at | date: 'shortTime'}}</p>
+                </div>
+            </article>
+        </div>
+
+        <div class="not-found" *ngIf="articles.length === 0">
+            <p>Articles not found</p>
+        </div>
+    </div>
+
+</section>
+
+
+
