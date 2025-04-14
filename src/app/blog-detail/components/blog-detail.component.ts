@@ -25,12 +25,13 @@ export class BlogDetailComponent implements OnInit{
   comments: BlogComment[] | null = null
   newComment: string = ''
   user : User | null = null
-
+  isLike : boolean = false
   constructor(private blogDetailService: BlogDetailService, private route: ActivatedRoute, private userStateService: UserStateService){
     
   }
 
   ngOnInit(): void {
+    
     const articleId: string = this.route.snapshot.paramMap.get('id')!;
     this.blogDetailService.getBlogDetails(articleId).subscribe({
       next: (res) => {
@@ -40,10 +41,13 @@ export class BlogDetailComponent implements OnInit{
     })
 
     this.userStateService.user$.subscribe({
-      next:(user) => 
+      next:(user) => {
         this.user = user
+        if(this.user){
+          this.getLike()
+        }
+      }
     })
-
   }
 
   turnOnComment(){
@@ -95,5 +99,48 @@ export class BlogDetailComponent implements OnInit{
         console.log(err)
       }
     })
+
+    
+  }
+
+  getLike(){
+    const articleId: string = this.route.snapshot.paramMap.get('id')!;
+    this.blogDetailService.getLike(this.user!.user_id, articleId).subscribe({
+      next: (res) => {
+        if(res.like){
+          this.isLike = true
+          console.log(this.isLike)
+        }
+      },
+      error: (err) => {
+        console.log('Not found like', err)
+      }
+    })
+  }
+
+  toggleLike(){
+    const articleId: string = this.route.snapshot.paramMap.get('id')!;
+
+    if(this.isLike){
+      this.blogDetailService.unLike(this.user!.user_id, articleId).subscribe({
+        next: (res) => {
+          this.isLike = false
+          console.log(res)
+        },
+        error: (err) => {
+          console.log('Unlike Error', err)
+        }
+      })
+    }else{
+      this.blogDetailService.like(this.user!.user_id, articleId).subscribe({
+        next: (res) => {
+          this.isLike = true
+          console.log(res)
+        },
+        error: (err) => {
+          console.log('Like Error', err)
+        }
+      })
+    }
   }
 }

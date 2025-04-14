@@ -7,3 +7,10 @@ export interface BlogComment {
     created_at: string;
     username: string;
 }
+
+export interface Like{
+    like_id: number,
+    article_id: number,
+    user_id: number,
+    created_at: string
+}

@@ -11,7 +11,7 @@
         <p class="author-name">Written by {{author}}</p>
         <div class="option">
             <i class="fa-solid fa-comments" (click)="turnOnComment()"></i>
-            <i class="fa-solid fa-star"></i>
+            <i (click)="toggleLike()" class="fa-solid fa-star" [ngStyle]="{'color': isLike ? 'rgb(255, 197, 121)': 'gray'}"></i>
         </div>
     </div>
     
