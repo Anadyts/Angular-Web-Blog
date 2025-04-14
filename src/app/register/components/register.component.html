@@ -3,18 +3,21 @@
         <h1>Sign up</h1>
         <div class="input-box">
             <p>Username</p>
-            <input type="text" placeholder="Username">
+            <input type="text" placeholder="Username" [(ngModel)]="username">
         </div>
         <div class="input-box">
             <p>Password</p>
-            <input type="password" placeholder="Password">
+            <input type="password" placeholder="Password" [(ngModel)]="password">
         </div>
         <div class="input-box">
             <p>Confirm Password</p>
-            <input type="password" placeholder="Confirm Password">
+            <input type="password" placeholder="Confirm Password" [(ngModel)]="confirmPassword">
+        </div>
+        <div class="error" *ngIf="error">
+            <p>{{error}}</p>
         </div>
         <div class="button-box">
-            <button>Sign up</button>
+            <button (click)="register()">Sign up</button>
         </div>
     </div>
 </div>
